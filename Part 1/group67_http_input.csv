@@ -1,0 +1,101 @@
+msg_id,app_protocol,src_app,dst_app,message,timestamp
+1,HTTP,mobile_app,api.weather.com,GET /v1/forecast?loc=tel_aviv HTTP/1.1,30.62
+2,HTTP,api.weather.com,mobile_app,HTTP/1.1 200 OK (JSON Forecast),30.65
+3,HTTP,smart_fridge,iot.cloud.com,POST /telemetry temp=4c hum=80% HTTP/1.1,35
+4,HTTP,iot.cloud.com,smart_fridge,HTTP/1.1 201 Created,35.24
+5,HTTP,client_browser,intranet.corp,OPTIONS /api/data HTTP/1.1,40
+6,HTTP,intranet.corp,client_browser,HTTP/1.1 204 No Content (CORS Allowed),40.02
+7,HTTP,client_browser,intranet.corp,PUT /api/data/update/5 HTTP/1.1,40.1
+8,HTTP,intranet.corp,client_browser,HTTP/1.1 200 OK (Update Success),40.15
+9,HTTP,dev_tool,staging.server.com,TRACE /debug-me HTTP/1.1,45
+10,HTTP,staging.server.com,dev_tool,HTTP/1.1 405 Method Not Allowed,45.19
+11,HTTP,client_browser,ads.tracker.com,GET /pixel.gif?uid=9982 HTTP/1.1,50
+12,HTTP,ads.tracker.com,client_browser,HTTP/1.1 200 OK (GIF Data),50.06
+13,HTTP,client_browser,shop.com,POST /cart/add id=555 HTTP/1.1,55
+14,HTTP,shop.com,client_browser,HTTP/1.1 503 Service Unavailable,55.1
+15,HTTP,client_browser,shop.com,POST /cart/add id=555 HTTP/1.1,55.5
+16,HTTP,shop.com,client_browser,HTTP/1.1 200 OK (Added to Cart),55.6
+17,HTTP,backup_sys,cloud.storage,PUT /backup/daily.zip HTTP/1.1,60
+18,HTTP,cloud.storage,backup_sys,HTTP/1.1 100 Continue,60.3
+19,HTTP,backup_sys,cloud.storage,Data Chunk 1 (Binary Content),60.4
+20,HTTP,cloud.storage,backup_sys,HTTP/1.1 201 Created,60.7
+21,HTTP,client_browser,news.site.com,GET /latest-news HTTP/1.1,65
+22,HTTP,news.site.com,client_browser,HTTP/1.1 200 OK (HTML),65.036
+23,HTTP,client_browser,news.site.com,GET /css/styles.css HTTP/1.1,65.04
+24,HTTP,news.site.com,client_browser,HTTP/1.1 200 OK (CSS Cache Hit),65.08
+25,HTTP,client_browser,news.site.com,GET /logout HTTP/1.1,66
+26,HTTP,tv_streaming,cdn.video.net,GET /hls/stream_001.ts HTTP/1.1,70.1
+27,HTTP,cdn.video.net,tv_streaming,HTTP/1.1 200 OK (MPEG-TS Video),70.15
+28,HTTP,tv_streaming,cdn.video.net,GET /hls/stream_002.ts HTTP/1.1,70.2
+29,HTTP,cdn.video.net,tv_streaming,HTTP/1.1 200 OK (MPEG-TS Video),70.25
+30,HTTP,sec_audit,internal.payroll,HEAD /admin/salaries HTTP/1.1,75
+31,HTTP,internal.payroll,sec_audit,HTTP/1.1 403 Forbidden,75.05
+32,HTTP,watch_smart,health.api.com,POST /sync/heartrate bpm=120 HTTP/1.1,80
+33,HTTP,health.api.com,watch_smart,HTTP/1.1 200 OK,80.12
+34,HTTP,client_browser,auth.provider,GET /oauth/authorize?client_id=123 HTTP/1.1,85
+35,HTTP,auth.provider,client_browser,HTTP/1.1 302 Found (Redirect),85.1
+36,HTTP,dev_ops_bot,server_farm,DELETE /logs/old_app.log HTTP/1.1,90
+37,HTTP,server_farm,dev_ops_bot,HTTP/1.1 204 No Content,90.05
+38,HTTP,client_browser,social.net,GET /feed?offset=20 HTTP/1.1,95
+39,HTTP,social.net,client_browser,HTTP/1.1 200 OK (JSON Feed),95.2
+40,HTTP,client_browser,social.net,GET /img/avatar_77.jpg HTTP/1.1,95.25
+41,HTTP,social.net,client_browser,HTTP/1.1 304 Not Modified,95.3
+42,HTTP,iot_cam,security.cloud,POST /upload/motion_event.mp4 HTTP/1.1,100
+43,HTTP,security.cloud,iot_cam,HTTP/1.1 100 Continue,100.1
+44,HTTP,iot_cam,security.cloud,Binary Video Data Block A,100.2
+45,HTTP,iot_cam,security.cloud,Binary Video Data Block B,100.3
+46,HTTP,security.cloud,iot_cam,HTTP/1.1 201 Created,100.5
+47,HTTP,legacy_sys,mainframe_gw,GET /api/xml/soap_request HTTP/1.0,110
+48,HTTP,mainframe_gw,legacy_sys,HTTP/1.0 200 OK (XML Data),110.5
+49,HTTP,malware_bot,target.server,GET /admin/config.php HTTP/1.1,120
+50,HTTP,target.server,malware_bot,HTTP/1.1 404 Not Found,120.01
+51,HTTP,malware_bot,target.server,GET /wp-admin/setup-config.php HTTP/1.1,120.02
+52,HTTP,target.server,malware_bot,HTTP/1.1 404 Not Found,120.03
+53,HTTP,admin_laptop,router.gateway,GET / config HTTP/1.1,125
+54,HTTP,router.gateway,admin_laptop,HTTP/1.1 401 Unauthorized,125.02
+55,HTTP,admin_laptop,router.gateway,GET / config (Auth Header) HTTP/1.1,125.1
+56,HTTP,router.gateway,admin_laptop,HTTP/1.1 200 OK (Dashboard),125.2
+57,HTTP,music_app,stream.audio,GET /song/999/chunk_1.mp3 HTTP/1.1,130
+58,HTTP,stream.audio,music_app,HTTP/1.1 206 Partial Content,130.05
+59,HTTP,music_app,stream.audio,GET /song/999/chunk_2.mp3 HTTP/1.1,130.1
+60,HTTP,stream.audio,music_app,HTTP/1.1 206 Partial Content,130.15
+61,HTTP,printer,print.server,POST /ipp/print-job HTTP/1.1,135
+62,HTTP,print.server,printer,HTTP/1.1 200 OK (Job Queued),135.2
+63,HTTP,crm_tool,sales_db,PATCH /customer/88/email HTTP/1.1,140
+64,HTTP,sales_db,crm_tool,HTTP/1.1 200 OK,140.1
+65,HTTP,auto_updater,software.repo,GET /updates/latest.sig HTTP/1.1,145
+66,HTTP,software.repo,auto_updater,HTTP/1.1 200 OK (Signature),145.05
+67,HTTP,auto_updater,software.repo,GET /updates/patch_v2.bin HTTP/1.1,145.1
+68,HTTP,software.repo,auto_updater,HTTP/1.1 200 OK (Binary),145.5
+69,HTTP,load_balancer,backend_01,GET /health-check HTTP/1.1,150
+70,HTTP,backend_01,load_balancer,HTTP/1.1 200 OK,150.01
+71,HTTP,load_balancer,backend_02,GET /health-check HTTP/1.1,150.02
+72,HTTP,backend_02,load_balancer,HTTP/1.1 500 Internal Server Error,150.03
+73,HTTP,load_balancer,alert_sys,POST /alert/down?node=backend_02 HTTP/1.1,150.1
+74,HTTP,alert_sys,load_balancer,HTTP/1.1 202 Accepted,150.15
+75,HTTP,client_browser,payment.gate,POST /charge/token HTTP/1.1,160
+76,HTTP,payment.gate,client_browser,HTTP/1.1 200 OK (Transaction ID),160.8
+77,HTTP,tesla_car,ota.update,HEAD /firmware/v11.0 HTTP/1.1,170
+78,HTTP,ota.update,tesla_car,HTTP/1.1 200 OK,170.1
+79,HTTP,tesla_car,ota.update,GET /firmware/v11.0/manifest HTTP/1.1,170.2
+80,HTTP,ota.update,tesla_car,HTTP/1.1 200 OK,170.3
+81,HTTP,gaming_console,game.net,GET /matchmaking/lobby HTTP/1.1,180
+82,HTTP,game.net,gaming_console,HTTP/1.1 200 OK (Lobby IP),180.1
+83,HTTP,gaming_console,game.net,POST /stats/match_end HTTP/1.1,180.5
+84,HTTP,game.net,gaming_console,HTTP/1.1 200 OK,180.6
+85,HTTP,smart_home,light.bulb,PUT /state?power=on&color=blue HTTP/1.1,190
+86,HTTP,light.bulb,smart_home,HTTP/1.1 200 OK,190.05
+87,HTTP,web_crawler,site.com,GET /robots.txt HTTP/1.1,200
+88,HTTP,site.com,web_crawler,HTTP/1.1 200 OK,200.05
+89,HTTP,web_crawler,site.com,GET /sitemap.xml HTTP/1.1,200.1
+90,HTTP,site.com,web_crawler,HTTP/1.1 200 OK,200.2
+91,HTTP,vpn_client,vpn_gateway,CONNECT secure.corp:443 HTTP/1.1,210
+92,HTTP,vpn_gateway,vpn_client,HTTP/1.1 200 Connection Established,210.1
+93,HTTP,vpn_client,vpn_gateway,Encrypted Tunnel Data Packet 1,210.2
+94,HTTP,vpn_gateway,vpn_client,Encrypted Tunnel Data Packet 2,210.3
+95,HTTP,dns_over_http,dns.google,GET /resolve?name=example.com HTTP/1.1,220
+96,HTTP,dns.google,dns_over_http,HTTP/1.1 200 OK (A 93.184.216.34),220.05
+97,HTTP,student_laptop,school.lms,GET /assignments/final_project.pdf HTTP/1.1,230
+98,HTTP,school.lms,student_laptop,HTTP/1.1 200 OK (PDF Stream),230.5
+99,HTTP,student_laptop,school.lms,POST /assignments/upload HTTP/1.1,240
+100,HTTP,school.lms,student_laptop,HTTP/1.1 200 OK (Upload Complete),241
